@@ -6,12 +6,14 @@ class OrangeTree
     @vozrastMax=vozrast
     @vozrastPlodonoheniia=1
   end
+
   def hight
     oneYearPasses
     @hightOrang=@hightOrang+rand(10)+1
     puts 'Za ' + @oneYear.to_s + ' orange tree vyroslo na ' + @hightOrang.to_s + ' sm '
     countTheOranges
   end
+
   def oneYearPasses
     if @oneYear<@vozrastMax
       @oneYear=@oneYear+1      
@@ -20,16 +22,16 @@ class OrangeTree
       exit
     end    
   end
-  def countTheOranges
-    
+
+  def countTheOranges    
     if @oneYear>@vozrastPlodonoheniia
       @orangeCount=@oneYear#*2      
       puts  @orangeCount.to_s + ' oranges vyroslo'
       pickAnOrange
       @orangeCount=0      
-    end
-    
+    end    
   end
+
   def pickAnOrange
     3.times do
       if @orangeCount>0
@@ -41,6 +43,7 @@ class OrangeTree
     end
   end  
 end
+
 t=rand(10)
 pet=OrangeTree.new t
 puts t
